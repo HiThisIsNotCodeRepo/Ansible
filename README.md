@@ -58,6 +58,7 @@ ansible nodes -a "go version"
 ```
 
 ## Install Docker
+```shell=
 ansible nodes -m yum -a 'name=yum-utils state=installed'
 ansible nodes -m shell -a 'sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo'
 ansible nodes -m yum -a 'name=docker-ce state=installed'
@@ -65,3 +66,4 @@ ansible nodes -m yum -a 'name=docker-ce-cli state=installed'
 ansible nodes -m yum -a 'name=containerd.io state=installed'
 ansible nodes -m systemd -a 'name=docker enabled=yes'
 ansible nodes -m systemd -a 'name=docker state=started'
+```
