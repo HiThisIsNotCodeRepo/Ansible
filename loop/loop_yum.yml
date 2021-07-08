@@ -1,0 +1,8 @@
+- hosts: web
+  tasks:
+    - name: Ensure a list of packages installed
+      yum: name="{{packages}}" state=present
+      vars:
+        packages:
+          - httpd
+          - httpd-tools

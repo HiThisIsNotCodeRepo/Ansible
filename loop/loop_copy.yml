@@ -1,0 +1,7 @@
+- hosts: web
+  tasks:
+    - name: Copy file
+      copy: src={{item.src}} dest={{item.dest}} mode{{item.mode}}
+      with_items:
+        - {src: "./rsyncd.conf", dest: "/etc/rsyncd.conf", mode:"0644"}
+        - {src: "./rsyncd.passwd", dest: "/tmp/rsyncd.passwd", mode:"0600"}

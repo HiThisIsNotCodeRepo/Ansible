@@ -1,0 +1,10 @@
+- hosts: node
+  vars:
+    - demo_server: 255.255.255.255
+  tasks:
+    - name: Copy Conf file
+      template: src=~/demo.con dest=~/demo.con
+      # when: ansible_distribution == "CentOS"  # execute on condition
+      # when: (ansible_hostname is match "master*") # match text
+      # when: (ansible_hostname is match "web*") or
+      # when: (ansible_hostname is match "lb*") # match on or 

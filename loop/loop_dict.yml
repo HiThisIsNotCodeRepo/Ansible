@@ -1,0 +1,7 @@
+- hosts: web
+  tasks:
+    - name: Add User
+      user: name={{item.name}} groups={{item.groups}} state=present
+      with_items:
+        - {name: 'testuser1', groups: 'bin'}
+        - {name: 'testuser2', groups: 'root'}

@@ -1,0 +1,11 @@
+- hosts: node
+  tasks:
+    - name: Get Network Port Stauts
+      shell: netstat -lntp
+      register: net_port
+
+    - name: Output Network Port Status
+      debug: msg="{{net_port}}"
+
+    - name: Output Network Port Status->stdout
+      debug: msg="{{net_port.stdout}}"

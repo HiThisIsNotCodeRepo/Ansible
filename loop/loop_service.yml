@@ -1,0 +1,10 @@
+- hosts: web
+  tasks:
+    - name: Installed Httpd Mariadb Package
+      yum: name=httpd,mariadb-server state=latest
+
+    - name: Start Httpd Mariadb server
+      service: name={{item}} state=started enabled=yes
+      with_items:
+        - httpd
+        - mariadb

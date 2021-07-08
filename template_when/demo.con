@@ -1,0 +1,3 @@
+Server="{{demo_server}}"
+Host="{{ansible_hostname}}"
+Cache="{{ansible_memtotal_mb//2}}"
