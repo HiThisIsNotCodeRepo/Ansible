@@ -67,3 +67,42 @@ ansible nodes -m yum -a 'name=containerd.io state=installed'
 ansible nodes -m systemd -a 'name=docker enabled=yes'
 ansible nodes -m systemd -a 'name=docker state=started'
 ```
+## Build in variable
+```shell=
+# ipv4 info
+ansible_all_ipv4_addresses
+# disk info
+ansible_devices
+# distribution info
+ansible_distribution
+# distribution version
+ansible_distribution_version
+# system type 32 bit or 64 bit
+ansible_machine
+# eth0 info
+ansible_eth0
+# hostname
+ansible_hostname
+# kernel info
+ansible_kernel
+# lvm info
+ansible_lvm
+# total mem
+ansible_memtotal_mb
+# free mem
+ansible_memfree_mb
+# mem info
+ansible_memory_mb
+# swap mem
+ansible_swaptotal_mb
+# swap free mem
+ansible_swapfree_mb
+# mount info
+ansible_mounts
+# cpu info
+ansible_processor
+# vcpu info
+ansible_processor_vcpus
+# python info
+ansible_python_version
+```
