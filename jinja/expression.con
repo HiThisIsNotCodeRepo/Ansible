@@ -1,0 +1,10 @@
+# loop
+{% for i in range(7,10) %}
+  server 172.16.1.{{i}}:{{http_port}}
+{% endfor %}
+
+# condition evaluation
+{% if EXPR %} ... {% elif EXPR %} ... {% endif %}
+
+# comment
+{# COMMENT #}
