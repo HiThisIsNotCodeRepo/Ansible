@@ -1,0 +1,9 @@
+- hosts: node
+  tasks:
+    - name: Get Network Port Stauts
+      shell: netstat -lntp | grep httpd
+      register: net_port
+      changed_when: false
+
+    - name: Output Network Port Status->stdout
+      debug: msg="{{net_port.stdout}}"

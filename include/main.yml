@@ -1,0 +1,8 @@
+# 引入的task是独立的任务
+- hosts: web
+  vars:
+    - http_port: 80
+  tasks:
+    - include_tasks: task_install.yml
+    - include_tasks: task_configure.yml
+    - include_tasks: task_start.yml

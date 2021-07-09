@@ -1,0 +1,23 @@
+- hosts: webservers
+  vars:
+    - http_port: 8085
+  force_handlers: yes # 不管是否出错强制执行handler
+  tasks:
+    - name: Install Http Server
+      yum: name=httpd state=present
+
+    - name: configure httpd server
+      template: src=./httpd.conf.j2 dest=/etc/httpd/conf/httpd.conf
+      notify:
+        - Restart Httpd Server
+        - Restart PHP Server
+
+    - name: start httpd server
+      service: name=httpd state=started enabled=yes
+
+  handlers:
+    - name: Restart Httpd Server
+      systemd: name=httpd state=restarted
+
+    - name: Restart PHP Server
+      systemd: name=php-fpm state=restarted

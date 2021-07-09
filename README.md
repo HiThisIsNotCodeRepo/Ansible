@@ -106,3 +106,14 @@ ansible_processor_vcpus
 # python info
 ansible_python_version
 ```
+## Playbook core feature
+1. when: condition evaluation
+2. item: loop
+3. handlers: notify to execute
+4. tags: select
+5. include_tasks: enhance reuse
+6. ignore_errors: ignore error
+7. error_handle: force_handler execute handler even error occurs
+8. changed_when false: mute changed status
+9. register: store value
+10. debug: echo value

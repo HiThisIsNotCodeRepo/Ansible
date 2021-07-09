@@ -1,0 +1,7 @@
+- hosts: all
+  tasks:
+    - name: Ignore False
+      command: /bin/false
+      ignore_errors: yes # 出现错误下列代码也执行
+    - name: Touch new file
+      file: path=/tmp/bgx_ignore state=touch

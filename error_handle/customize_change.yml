@@ -1,0 +1,4 @@
+- name: validate nginx conf
+  shell: "/data/app/nginx/sbin/nginx -t"
+  register: command_result
+  changed_when: command_result.stdout.find('successful')

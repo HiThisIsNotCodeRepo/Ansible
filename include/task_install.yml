@@ -1,0 +1,2 @@
+- name: Install Http Server
+  yum: name=httpd state=present
