@@ -1,0 +1,6 @@
+# cat /root/roles/wordpress/meta/main.yml
+# nginx -> php-fpm -> wordpress
+---
+dependencies:
+  - { role: nginx }
+  - { role: php-fpm }
